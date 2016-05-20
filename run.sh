@@ -10,3 +10,4 @@ mkdir tempest
     tools/run-tests.sh
 )
 ls -l tempest/tempest.xml tempest/tempest.log
+cp tempest/tempest.xml result.xml
