@@ -1,5 +1,5 @@
 #!/bin/sh
-
+sudo yum install -y openstack-tempest-liberty python-tempest-lib
 mkdir tempest
 (
     source overcloudrc
