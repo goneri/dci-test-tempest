@@ -2,6 +2,9 @@
 set -eux
 sudo yum install -y openstack-tempest-liberty python-tempest-lib
 
+# do not test manila
+sudo yum remove -y openstack-rally python-manila
+
 [ -d tempest ] || mkdir tempest
 
 source overcloudrc
