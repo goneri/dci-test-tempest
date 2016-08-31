@@ -1,5 +1,4 @@
 #!/bin/bash
-stack_name=$1
 
 osp_version=$(yum info rhosp-director-images 2>&1|awk '/Version/ {print $3}')
 case $osp_version in
@@ -17,7 +16,7 @@ esac
 
 [ -d tempest ] || mkdir tempest
 
-source ${stack_name}rc
+source ~/${DCI_OVERCLOUD_STACK_NAME}rc
 cd tempest
 
 ${tempest_dir}/tools/configure-tempest-directory
