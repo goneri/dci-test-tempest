@@ -9,7 +9,7 @@ case $osp_version in
     tempest_dir='/usr/share/openstack-tempest-liberty'
     ;;
     '9.0')
-    sudo yum install -y openstack-tempest
+    sudo yum install -y openstack-tempest python-manila-tests python-ironic-tests
     tempest_dir='/usr/share/openstack-tempest-10.0.0'
     ;;
 esac
