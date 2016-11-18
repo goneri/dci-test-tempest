@@ -20,9 +20,10 @@ source ~/${DCI_OVERCLOUD_STACK_NAME}rc
 cd tempest
 
 ${tempest_dir}/tools/configure-tempest-directory
-tools/config_tempest.py --deployer-input ~/tempest-deployer-input.conf --debug --create identity.uri $OS_AUTH_URL identity.admin_password $OS_PASSWORD object-storage-feature-enabled.discoverability False
+tools/config_tempest.py --deployer-input ~/tempest-deployer-input.conf --out etc/tempest.conf --debug --create identity.uri $OS_AUTH_URL identity.admin_password $OS_PASSWORD object-storage-feature-enabled.discoverability False
 
 [ -d .testrepository ] || testr init
+export TEMPEST_CONFIG_DIR=$(pwd)/etc
 testr run --subunit --parallel --concurrency=4 '.*smoke.*' |subunit2junitxml --output-to=../result.xml
 echo 'done'
 exit 0
