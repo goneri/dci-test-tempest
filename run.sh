@@ -13,7 +13,7 @@ case $osp_version in
     tempest_dir='/usr/share/openstack-tempest-10.0.0'
     ;;
     '10.0')
-    sudo yum install -y openstack-tempest python-manila-tests python-ironic-tests
+    sudo yum install -y openstack-tempest python-aodh-tests python-ceilometer-tests python-heat-tests python-ironic-tests python-keystone-tests python-manila-tests python-mistral-tests python-neutron-tests python-zaqar-tests
     tempest_dir='/usr/share/openstack-tempest-13.0.0'
     ;;
 esac
